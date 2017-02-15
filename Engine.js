@@ -64,15 +64,6 @@ var mGrid = (function () {
 
        
         _tableDataBind.call(this);
-
-        //var lista = window.document.getElementById("mlista");
-     
-        //for (var i = 0; i < _datasource.length; i++) {
-        //    var it = window.document.createElement("li");
-        //    it.innerHTML = "<a href='#'><span class=´glyphicon glyphicon-user'></span>" + _datasource[i].nome + "</a>";
-        //    lista.appendChild(it);
-        //}
-
     }
 
     var _sort = function (field) {
