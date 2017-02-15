@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 102 Template</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
+    <style>
+        #footer {
+            background-color:lightgray;
+            border-top-color:gray;
+            border-style:solid;
+            border-width:thin;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 10pt;
+            height: 35px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="EditModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cadastro</h4>
+                </div>
+                <div id="EditBody" class="modal-body">
+                    <div id="divNome">
+                        <label class="control-label" for="txtNome">Nome</label>
+                        <input id="txtNome" type="text" name="txtNome" class="form-control" />
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span id="hbNome" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                    <div id="divCidade">
+                        <label class="control-label" for="txtCidade">Cidade</label>
+                        <input id="txtCidade" type="text" name="txtCidade" class="form-control" />
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span id="hbcidade" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                    <div id="divData">
+                        <label class="control-label" for="txtData">Data</label>
+                        <input id="txtDatePicker" type="text" name="txtDatePicker" class="form-control" />
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span id="hdDate" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    </div>
+                    <div id="divTipo">
+                        <label class="control-label" for="ddlTipo">Tipo</label>
+                        <select id="ddlTipo" class="form-control">
+                            <option value="0">Selecione UM</option>
+                            <option value="1">Tipo UM</option>
+                            <option value="2">Tipo DOIS</option>
+                            <option value="3">Tipo TRES</option>
+                        </select>
+                        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                        <span id="hdTipo" class="help-block">Selecione UM!!!.</span>
+                    </div>
+                </div>
+                <div id="divAlertSave" class="alert alert-danger">
+                    <strong>Ooops!</strong> Não foi possível salvar!! 
+                </div>
+                <div id="EditFooter" class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="javascript:mGrid.save();">Salvar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Cadastro Básico</h2>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul id="mlista" class="dropdown-menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp; Action</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+          <div class="panel panel-default">
+            <div id="divButton" class="panel-body"></div>
+        </div>
+        <div class="panel panel-default">
+            <div id="mainGrid"></div>
+        </div>
+        
+        </div>
+      
+
+        <!--  <div class="navbar navbar-fixed-bottom">hello</div>-->
+        <div id="footer">
+    </div>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="Engine.js"></script>
+    <script src="base.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    mGrid.create("mainGrid");
+</script>
+
+
+<!--  <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess2">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-warning has-feedback">
+        <label class="control-label" for="inputWarning2">Input with warning</label>
+        <input type="text" class="form-control" id="inputWarning2" aria-describedby="inputWarning2Status">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="inputWarning2Status" class="sr-only">(warning)</span>
+    </div>
+    <div class="form-group has-error has-feedback">
+        <label class="control-label" for="inputError2">Input with error</label>
+        <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span id="inputError2Status" class="sr-only">(error)</span>
+    </div>
+    <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputGroupSuccess1">Input group with success</label>
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGroupSuccess1Status" class="sr-only">(success)</span>
+    </div>-->
